@@ -3,6 +3,7 @@ from sqlmodel import SQLModel, Field
 
 
 class Flashcard(SQLModel, table=True):
+    __tablename__ = "flashcards"
     flashcard_id: int | None = Field(default=None, primary_key=True)
     flashcard_question: str
     flashcard_answer: str
