@@ -2,7 +2,7 @@ from pydantic import BaseModel, field_validator
 
 
 class Flashcard(BaseModel):
-    flashcard_id: int
+    id: int
     flashcard_question: str
     flashcard_answer: str
     deck_id: int
