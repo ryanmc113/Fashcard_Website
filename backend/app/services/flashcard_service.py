@@ -1,15 +1,18 @@
 from typing import List, Optional
-from dal import flashcard_dal as Flashcard_dal
+from dal.flashcard_dal import FlashcardDAL
 from models.db import flashcard as Flashcard
+from schemas.flashcard import FlashcardSchema
 
 
 class FlashcardService:
-    def __init__(self, flashcard_dal: Flashcard_dal):
+    def __init__(self, flashcard_dal: FlashcardDAL):
         self.flashcard_dal = flashcard_dal
 
     # add flashcard to a deck
-    def add_flashcard_to_deck(self, flashcard: Flashcard) -> Flashcard:
-        pass
+    def add_flashcard_to_deck(self, flashcard: FlashcardSchema) -> Flashcard:
+        flashcard = Flashcard()
+        self.flashcard_dal.create(flashcard)
+        return flashcard
 
     # use case: when you fell confident you know the answer
     # but don't want to delete it or see it for a bit

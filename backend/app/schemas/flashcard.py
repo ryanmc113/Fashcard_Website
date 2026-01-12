@@ -1,7 +1,7 @@
 from pydantic import BaseModel, field_validator
 
 
-class Flashcard(BaseModel):
+class FlashcardSchema(BaseModel):
     id: int
     flashcard_question: str
     flashcard_answer: str
@@ -11,7 +11,7 @@ class Flashcard(BaseModel):
 
     @field_validator("flashcard_question", "flashcard_answer")
     @classmethod
-    def not_blank(cls, v: str):
-        if not v.strip():
+    def not_blank(cls, field: str):
+        if not field.strip():
             raise ValueError("Field cannot be blank")
-        return v
+        return field
