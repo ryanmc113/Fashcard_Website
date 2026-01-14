@@ -13,5 +13,5 @@ class FlashcardSchema(BaseModel):
     @classmethod
     def not_blank(cls, field: str):
         if not field.strip():
-            raise ValueError("Field cannot be blank")
+            raise ValueError("f{field} cannot be blank")
         return field

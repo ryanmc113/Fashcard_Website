@@ -9,10 +9,15 @@ class FlashcardService:
         self.flashcard_dal = flashcard_dal
 
     # add flashcard to a deck
-    def add_flashcard_to_deck(self, flashcard: FlashcardSchema) -> Flashcard:
-        flashcard = Flashcard()
-        self.flashcard_dal.create(flashcard)
-        return flashcard
+    def add_flashcard_to_deck(self, payload: FlashcardSchema) -> Flashcard:
+        flashcard = Flashcard(
+            flashcard_question=payload.flashcard_question,
+            flashcard_answer=payload.flashcard_answer,
+            deck_id=payload.deck_id,
+            knowledge_strength=payload.knowledge_strength,
+            view_number=payload.view_number,
+        )
+        return self.flashcard_dal.create(flashcard)
 
     # use case: when you fell confident you know the answer
     # but don't want to delete it or see it for a bit
