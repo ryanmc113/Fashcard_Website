@@ -12,5 +12,9 @@ class DeckService:
         deck = Deck(
             name=payload.name,
             collection_id=payload.collection_id,
+            tags=payload.tags,
             knowledge_strength=payload.knowledge_strength,
+            view_number=payload.view_number,
         )
+
+        return self.deck_dal.create(deck=deck)

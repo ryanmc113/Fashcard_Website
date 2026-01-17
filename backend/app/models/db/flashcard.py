@@ -2,7 +2,7 @@
 from sqlmodel import SQLModel, Field
 
 
-class Flashcard(SQLModel, table=True):
+class FlashcardModel(SQLModel, table=True):
     __tablename__ = "flashcards"
     id: int | None = Field(default=None, primary_key=True)
     flashcard_question: str

@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends
 from dal import deck_dal
-from services.deck_service import De
+from services.deck_service import DeckService
+from schemas.deck import DeckSchema
 
 router = APIRouter()
 
@@ -11,5 +12,5 @@ async def list_decks():
 
 
 @router.post("/create")
-async def create_deck():
-    return
+async def create_deck(payload: DeckSchema):
+    return DeckService.create_deck(payload)

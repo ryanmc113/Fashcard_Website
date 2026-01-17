@@ -2,7 +2,7 @@
 from sqlmodel import SQLModel, Field
 
 
-class Deck(SQLModel, table=True):
+class DeckModel(SQLModel, table=True):
     __tablename__ = "deck"
     deck_id: int | None = Field(default=None, primary_key=True)
     name: str
