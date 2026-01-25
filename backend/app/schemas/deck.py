@@ -2,7 +2,6 @@ from pydantic import BaseModel, field_validator
 
 
 class DeckSchema(BaseModel):
-    deck_id: int
     name: str
     collection_id: int
     tags: str

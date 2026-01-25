@@ -1,4 +1,3 @@
-# app/models/deck.py
 from sqlmodel import SQLModel, Field
 
 

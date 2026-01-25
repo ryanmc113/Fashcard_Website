@@ -1,5 +1,5 @@
 from sqlmodel import Session, select
-from app.models.db.flashcard import FlashcardModel
+from models.db.flashcard import FlashcardModel
 from typing import List, Optional
 
 

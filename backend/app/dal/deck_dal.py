@@ -1,5 +1,5 @@
 from sqlmodel import Session, select
-from app.models.db.deck import DeckModel
+from models.db.deck import DeckModel
 from typing import List, Optional
 
 
